@@ -22,7 +22,7 @@
 		<div id="banner">
 			<h1>My first Webapp</h1>
 			<p>Mit dieser Webapp können Namen in einer Datenbank gespeichert
-				werden.</p>
+				werden</p>
 			<a class="btn btn-primary btn-lg href=" main" href="main">Go</a>
 		</div>
 	</div>
