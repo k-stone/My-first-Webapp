@@ -14,4 +14,12 @@ public class WebController {
 
 		return modelAndView;
 	}
+	
+	@RequestMapping("/main")
+	ModelAndView main(ModelAndView modelAndView) {
+
+		modelAndView.setViewName("main");
+
+		return modelAndView;
+	}
 }

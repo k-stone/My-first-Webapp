@@ -2,7 +2,7 @@ var app = angular.module('app', []);
 
 app.controller('postController', function($scope, $http, $location) {
 	$scope.submitForm = function(){
-		var url = $location.absUrl() + "postcustomer";
+		var url = $location.$host + "postcustomer";
 		
 		var config = {
                 headers : {
@@ -17,7 +17,7 @@ app.controller('postController', function($scope, $http, $location) {
 		
 		
 		$http.post(url, data, config).then(function (response) {
-			$scope.postResultMessage = "Sucessful!";
+			$scope.postResultMessage = "Successful!";
 		}, function (response) {
 			$scope.postResultMessage = "Fail!";
 		});

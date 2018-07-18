@@ -2,7 +2,7 @@ var app = angular.module('app', []);
 
 app.controller('postController', function($scope, $http, $location) {
 	$scope.submitForm = function(){
-		var url = $location.absUrl() + "postcustomer";
+		var url = "postcustomer";
 		
 		var config = {
                 headers : {
@@ -32,7 +32,7 @@ app.controller('getallcustomersController', function($scope, $http, $location) {
 	$scope.showAllCustomers = false;
 
 	$scope.getAllCustomers = function() {
-		var url = $location.absUrl() + "findall";
+		var url = "findall";
 
 		var config = {
 			headers : {
@@ -62,7 +62,7 @@ app.controller('getcustomerController', function($scope, $http, $location) {
 	$scope.showCustomer = false;
 	
 	$scope.getCustomer = function() {
-		var url = $location.absUrl() + "customer/" + $scope.customerId;
+		var url = "customer/" + $scope.customerId;
 
 		var config = {
 			headers : {
@@ -92,7 +92,7 @@ app.controller('getcustomersbylastnameController', function($scope, $http, $loca
 	$scope.showCustomersByLastName = false;
 	
 	$scope.getCustomersByLastName = function() {
-		var url = $location.absUrl() + "findbylastname";
+		var url = "findbylastname";
 
 		var config = {
 			headers : {	'Content-Type' : 'application/json;charset=utf-8;' },
