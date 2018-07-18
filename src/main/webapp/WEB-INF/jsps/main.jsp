@@ -13,23 +13,24 @@
 <link href="https://fonts.googleapis.com/css?family=Abel"
 	rel="stylesheet">
 <link rel="stylesheet"
-	href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+	integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+	crossorigin="anonymous">
 <link href="<%=request.getContextPath()%>/resources/style.css"
 	rel="stylesheet">
 </head>
 <body>
 	<div class="container" ng-app="app">
-		<div class="jumbotron">
-		<h1 class="display-4">AngularJS - Spring JPA - PostgreSQL</h1>
+		<h1>AngularJS - Spring JPA - PostgreSQL</h1>
 
 		<div class="row">
 			<div ng-controller="postController" class="col-md-3">
 				<form name="customerForm" ng-submit="submitForm()">
-					<label>FirstName</label>
-					<input type="text" name="firstname"	class="form-control" ng-model="firstname" />
-					<label>LastName</label>
-					<input type="text" name="lastname" class="form-control" ng-model="lastname" />
-					
+					<label>FirstName</label> <input type="text" name="firstname"
+						class="form-control" ng-model="firstname" /> <label>LastName</label>
+					<input type="text" name="lastname" class="form-control"
+						ng-model="lastname" />
+
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</form>
 				<p>{{postResultMessage}}</p>
@@ -43,12 +44,12 @@
 
 				<div ng-show="showAllCustomers">
 					<ul class="list-group">
-						<li ng-repeat="customer in allcustomers.data"><h4 class="list-group-item">
-								<strong>Customer {{$index}}</strong><br />
-								Id: {{customer.id}}<br />
-								First Name: {{customer.firstName}}<br />
-								Last Name: {{customer.lastName}}
-						</h4></li>
+						<li ng-repeat="customer in allcustomers.data"><h4
+								class="list-group-item">
+								<strong>Customer {{$index}}</strong><br /> Id: {{customer.id}}<br />
+								First Name: {{customer.firstName}}<br /> Last Name:
+								{{customer.lastName}}
+							</h4></li>
 					</ul>
 				</div>
 				<p>{{getResultMessage}}</p>
@@ -62,37 +63,48 @@
 				<button ng-click="getCustomer()">Get Customer</button>
 
 				<div ng-show="showCustomer">
-					Id: {{customer.data.id}}<br />
-					First Name: {{customer.data.firstName}}<br />
-					Last Name: {{customer.data.lastName}}
+					Id: {{customer.data.id}}<br /> First Name:
+					{{customer.data.firstName}}<br /> Last Name:
+					{{customer.data.lastName}}
 				</div>
 				<p>{{getResultMessage}}</p>
 			</div>
 
-			<div ng-controller="getcustomersbylastnameController" class="col-md-4">
+			<div ng-controller="getcustomersbylastnameController"
+				class="col-md-4">
 				<h3>Customers by LastName</h3>
 
-				<input type="text" class="form-control" style="width: 100px;" ng-model="customerLastName" /><br />
+				<input type="text" class="form-control" style="width: 100px;"
+					ng-model="customerLastName" /><br />
 				<button ng-click="getCustomersByLastName()">Get Customers</button>
 
 				<div ng-show="showCustomersByLastName">
 
 					<ul class="list-group">
-						<li ng-repeat="customer in allcustomersbylastname.data"><h4	class="list-group-item">
-								<strong>Customer {{$index}}</strong><br />
-								Id: {{customer.id}}<br />
-								First Name: {{customer.firstName}}<br />
-								Last Name: {{customer.lastName}}
-						</h4></li>
+						<li ng-repeat="customer in allcustomersbylastname.data"><h4
+								class="list-group-item">
+								<strong>Customer {{$index}}</strong><br /> Id: {{customer.id}}<br />
+								First Name: {{customer.firstName}}<br /> Last Name:
+								{{customer.lastName}}
+							</h4></li>
 					</ul>
 				</div>
 				<p>{{getResultMessage}}</p>
 			</div>
-
 		</div>
-		</div>
-		
 		<p>Dies ist die Fuﬂzeile</p>
 	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+		integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+		crossorigin="anonymous"></script>
 </body>
 </html>
