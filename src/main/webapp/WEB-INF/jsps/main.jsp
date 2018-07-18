@@ -10,12 +10,17 @@
 <script
 	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
 <script src="/js/angular.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Abel"
+	rel="stylesheet">
 <link rel="stylesheet"
 	href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+<link href="<%=request.getContextPath()%>/resources/style.css"
+	rel="stylesheet">
 </head>
 <body>
 	<div class="container" ng-app="app">
-		<h1>AngularJS - Spring JPA - PostgreSQL</h1>
+		<div class="jumbotron">
+		<h1 class="display-4">AngularJS - Spring JPA - PostgreSQL</h1>
 
 		<div class="row">
 			<div ng-controller="postController" class="col-md-3">
@@ -84,6 +89,7 @@
 				<p>{{getResultMessage}}</p>
 			</div>
 
+		</div>
 		</div>
 		
 		<p>Dies ist die Fuﬂzeile</p>
