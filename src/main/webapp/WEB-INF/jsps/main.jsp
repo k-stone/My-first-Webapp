@@ -20,11 +20,17 @@
 	rel="stylesheet">
 </head>
 <body>
+	<div class="container-fluid">
+		<div id="banner2">
+			<h1>My first Webapp</h1>
+		</div>
+	</div>
 	<div class="container" ng-app="app">
-		<h1>AngularJS - Spring JPA - PostgreSQL</h1>
+		<h1>Customer Management</h1>
 
 		<div class="row">
-			<div ng-controller="postController" class="col-md-3">
+			<div ng-controller="postController"
+				class="col-xs-12 col-sm-6 col-md-3">
 				<form name="customerForm" ng-submit="submitForm()">
 					<label>FirstName</label> <input type="text" name="firstname"
 						class="form-control" ng-model="firstname" /> <label>LastName</label>
@@ -37,7 +43,8 @@
 			</div>
 		</div>
 		<div class="row">
-			<div ng-controller="getallcustomersController" class="col-md-3">
+			<div ng-controller="getallcustomersController"
+				class="col-xs-12 col-sm-6 col-md-3">
 				<h3>All Customers</h3>
 
 				<button ng-click="getAllCustomers()">Get All Customers</button>
@@ -55,7 +62,8 @@
 				<p>{{getResultMessage}}</p>
 			</div>
 
-			<div ng-controller="getcustomerController" class="col-md-3">
+			<div ng-controller="getcustomerController"
+				class="col-xs-12 col-sm-6 col-md-3">
 				<h3>Customer by ID</h3>
 
 				<input type="text" class="form-control" style="width: 100px;"
@@ -63,15 +71,25 @@
 				<button ng-click="getCustomer()">Get Customer</button>
 
 				<div ng-show="showCustomer">
-					Id: {{customer.data.id}}<br /> First Name:
-					{{customer.data.firstName}}<br /> Last Name:
-					{{customer.data.lastName}}
+<!-- 					Id: {{customer.data.id}}<br /> First Name: -->
+<!-- 					{{customer.data.firstName}}<br /> Last Name: -->
+<!-- 					{{customer.data.lastName}} -->
+					<ul class="list-group">
+						<li>
+							<h4 class="list-group-item">
+								<strong>Customer {{$index}}</strong><br /> Id:
+								{{customer.data.id}}<br /> First Name:
+								{{customer.data.firstName}}<br /> Last Name:
+								{{customer.data.lastName}}
+							</h4>
+						</li>
+					</ul>
 				</div>
 				<p>{{getResultMessage}}</p>
 			</div>
 
 			<div ng-controller="getcustomersbylastnameController"
-				class="col-md-4">
+				class="col-xs-12 col-sm-6 col-md-3">
 				<h3>Customers by LastName</h3>
 
 				<input type="text" class="form-control" style="width: 100px;"
@@ -81,19 +99,25 @@
 				<div ng-show="showCustomersByLastName">
 
 					<ul class="list-group">
-						<li ng-repeat="customer in allcustomersbylastname.data"><h4
-								class="list-group-item">
+						<li ng-repeat="customer in allcustomersbylastname.data">
+							<h4 class="list-group-item">
 								<strong>Customer {{$index}}</strong><br /> Id: {{customer.id}}<br />
 								First Name: {{customer.firstName}}<br /> Last Name:
 								{{customer.lastName}}
-							</h4></li>
+							</h4>
+						</li>
 					</ul>
 				</div>
 				<p>{{getResultMessage}}</p>
 			</div>
 		</div>
-		<p>Dies ist die Fuﬂzeile</p>
 	</div>
+	<div class="container-fluid">
+		<div id="footer">
+			<p>footer</p>
+		</div>
+	</div>
+
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
