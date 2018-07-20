@@ -27,7 +27,7 @@
 					<img src="<%=request.getContextPath()%>/images/Knight.svg" alt=""
 						width="100">
 					<h2>awsome</h2>
-					<p>Diese Webapp ist groﬂartig.</p>
+					<p>Diese Webapp ist groﬂartig!</p>
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-6 col-md-3">

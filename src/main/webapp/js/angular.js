@@ -1,37 +1,48 @@
 var app = angular.module('app', []);
 
+app.controller('clearallController', function($scope, $http, $location, $window) {
+
+	$scope.clearAll = function() {
+		$window.location.reload();
+	}
+
+});
+
 app.controller('postController', function($scope, $http, $location) {
-	$scope.submitForm = function(){
+	
+	$scope.submitForm = function() {
+		
 		var url = "postcustomer";
-		
+
 		var config = {
-                headers : {
-                    'Content-Type': 'application/json;charset=utf-8;'
-                }
-        }
-		
+			headers : {
+				'Content-Type' : 'application/json;charset=utf-8;'
+			}
+		}
+
 		var data = {
-            firstName: $scope.firstname,
-            lastName: $scope.lastname
-        };
-		
-		
-		$http.post(url, data, config).then(function (response) {
+			firstName : $scope.firstname,
+			lastName : $scope.lastname
+		};
+
+
+		$http.post(url, data, config).then(function(response) {
 			$scope.postResultMessage = "Successful!";
-		}, function (response) {
+		}, function(response) {
 			$scope.postResultMessage = "Fail!";
 		});
-		
+
 		$scope.firstname = "";
 		$scope.lastname = "";
 	}
 });
 
 app.controller('getallcustomersController', function($scope, $http, $location) {
-	
+
 	$scope.showAllCustomers = false;
 
 	$scope.getAllCustomers = function() {
+		
 		var url = "findall";
 
 		var config = {
@@ -45,7 +56,7 @@ app.controller('getallcustomersController', function($scope, $http, $location) {
 			if (response.data.status == "Done") {
 				$scope.allcustomers = response.data;
 				$scope.showAllCustomers = true;
-
+				
 			} else {
 				$scope.getResultMessage = "get All Customers Data Error!";
 			}
@@ -55,12 +66,15 @@ app.controller('getallcustomersController', function($scope, $http, $location) {
 		});
 
 	}
+
+	
 });
 
+
 app.controller('getcustomerController', function($scope, $http, $location) {
-	
+
 	$scope.showCustomer = false;
-	
+
 	$scope.getCustomer = function() {
 		var url = "customer/" + $scope.customerId;
 
@@ -88,16 +102,20 @@ app.controller('getcustomerController', function($scope, $http, $location) {
 });
 
 app.controller('getcustomersbylastnameController', function($scope, $http, $location) {
-	
+
 	$scope.showCustomersByLastName = false;
 	
 	$scope.getCustomersByLastName = function() {
 		var url = "findbylastname";
 
 		var config = {
-			headers : {	'Content-Type' : 'application/json;charset=utf-8;' },
-		
-			params: { 'lastName' : $scope.customerLastName }
+			headers : {
+				'Content-Type' : 'application/json;charset=utf-8;'
+			},
+
+			params : {
+				'lastName' : $scope.customerLastName
+			}
 		}
 
 		$http.get(url, config).then(function(response) {
@@ -105,7 +123,7 @@ app.controller('getcustomersbylastnameController', function($scope, $http, $loca
 			if (response.data.status == "Done") {
 				$scope.allcustomersbylastname = response.data;
 				$scope.showCustomersByLastName = true;
-
+			
 			} else {
 				$scope.getResultMessage = "Customer Data Error!";
 			}
@@ -116,3 +134,4 @@ app.controller('getcustomersbylastnameController', function($scope, $http, $loca
 
 	}
 });
+

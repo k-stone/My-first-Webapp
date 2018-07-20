@@ -21,10 +21,18 @@
 </head>
 <body>
 
+
 	<jsp:include page="/WEB-INF/jsps/banner.jsp?origin=main" />
-	
+
 	<div class="container" ng-app="app">
 		<h1>Customer Management</h1>
+
+		<div class="row">
+			<div ng-controller="clearallController"
+				class="col-xs-12 col-sm-6 col-md-3">
+				<button class="btn btn-primary" ng-click="clearAll()">Clear</button>
+			</div>
+		</div>
 
 		<div class="row">
 			<div ng-controller="postController"
@@ -40,12 +48,14 @@
 				<p>{{postResultMessage}}</p>
 			</div>
 		</div>
+
 		<div class="row">
 			<div ng-controller="getallcustomersController"
 				class="col-xs-12 col-sm-6 col-md-3">
 				<h3>All Customers</h3>
 
-				<button ng-click="getAllCustomers()">Get All Customers</button>
+				<button class="btn btn-primary" ng-click="getAllCustomers()">Get
+					All Customers</button>
 
 				<div ng-show="showAllCustomers">
 					<ul class="list-group">
@@ -66,7 +76,8 @@
 
 				<input type="text" class="form-control" style="width: 100px;"
 					ng-model="customerId" /> <br />
-				<button ng-click="getCustomer()">Get Customer</button>
+				<button class="btn btn-primary" ng-click="getCustomer()">Get
+					Customer</button>
 
 				<div ng-show="showCustomer">
 					<!-- 					Id: {{customer.data.id}}<br /> First Name: -->
@@ -92,7 +103,8 @@
 
 				<input type="text" class="form-control" style="width: 100px;"
 					ng-model="customerLastName" /><br />
-				<button ng-click="getCustomersByLastName()">Get Customers</button>
+				<button class="btn btn-primary" ng-click="getCustomersByLastName()">Get
+					Customers</button>
 
 				<div ng-show="showCustomersByLastName">
 
@@ -109,6 +121,8 @@
 				<p>{{getResultMessage}}</p>
 			</div>
 		</div>
+
+
 	</div>
 	<div class="container-fluid">
 		<div id="footer">
