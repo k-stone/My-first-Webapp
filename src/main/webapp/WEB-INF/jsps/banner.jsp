@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
 <title>Spring Boot Example</title>
@@ -17,55 +17,24 @@
 	rel="stylesheet">
 </head>
 <body>
-
-	<jsp:include page="/WEB-INF/jsps/banner.jsp?origin=home" />
-	
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-sm-6 col-md-3">
-				<div class="card">
-					<img src="<%=request.getContextPath()%>/images/Knight.svg" alt=""
-						width="100">
-					<h2>awsome</h2>
-					<p>Diese Webapp ist großartig.</p>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-3">
-				<div class="card">
-					<img src="<%=request.getContextPath()%>/images/Unicorn.svg" alt=""
-						width="100">
-					<h2>brilliant</h2>
-					<p>Diese Webapp ist brilliant.</p>
-				</div>
-
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-3">
-				<div class="card">
-					<img src="<%=request.getContextPath()%>/images/Werewolf.svg" alt=""
-						width="100">
-					<h2>unique</h2>
-					<p>Diese Webapp ist einzigartig.</p>
-				</div>
-
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-3">
-				<div class="card">
-					<img src="<%=request.getContextPath()%>/images/Orc.svg" alt=""
-						width="100">
-					<h2>overwhelming</h2>
-					<p>Diese Webapp ist überwältigend.</p>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
 	<div class="container-fluid">
-		<div id="footer">
-			<p>footer</p>
+		<div id="banner">
+			<h1>My first Webapp</h1>
+			<p>Mit dieser Webapp können Namen in einer Datenbank gespeichert
+				werden</p>
+
+			<c:set var="parm" value="${param.origin}" />
+			<c:choose>
+				<c:when test="${parm == 'home'}">
+					<a class="btn btn-primary btn-lg href=" href="main">Go</a>
+				</c:when>
+				<c:otherwise>
+					<a class="btn btn-primary btn-lg href=" href="../">Back</a>
+				</c:otherwise>
+			</c:choose>
 		</div>
 	</div>
-	
+
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>

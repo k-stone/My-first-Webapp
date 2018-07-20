@@ -20,11 +20,9 @@
 	rel="stylesheet">
 </head>
 <body>
-	<div class="container-fluid">
-		<div id="banner2">
-			<h1>My first Webapp</h1>
-		</div>
-	</div>
+
+	<jsp:include page="/WEB-INF/jsps/banner.jsp?origin=main" />
+	
 	<div class="container" ng-app="app">
 		<h1>Customer Management</h1>
 
@@ -71,9 +69,9 @@
 				<button ng-click="getCustomer()">Get Customer</button>
 
 				<div ng-show="showCustomer">
-<!-- 					Id: {{customer.data.id}}<br /> First Name: -->
-<!-- 					{{customer.data.firstName}}<br /> Last Name: -->
-<!-- 					{{customer.data.lastName}} -->
+					<!-- 					Id: {{customer.data.id}}<br /> First Name: -->
+					<!-- 					{{customer.data.firstName}}<br /> Last Name: -->
+					<!-- 					{{customer.data.lastName}} -->
 					<ul class="list-group">
 						<li>
 							<h4 class="list-group-item">
