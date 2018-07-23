@@ -26,9 +26,8 @@
 			<p>Mit dieser Webapp können Namen in einer Datenbank gespeichert
 				werden</p>
 
-			<c:set var="parm" value="${param.origin}" />
 			<c:choose>
-				<c:when test="${parm == 'home'}">
+				<c:when test="<%= request.getParameter("origin") %> == 'home'">
 					<a class="btn btn-primary btn-lg href=" href="main">Go</a>
 				</c:when>
 				<c:otherwise>

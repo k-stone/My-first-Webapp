@@ -18,7 +18,9 @@
 </head>
 <body>
 
-	<jsp:include page="/WEB-INF/jsps/banner.jsp?origin=home" />
+	<jsp:include page="/WEB-INF/jsps/banner.jsp" />
+		<jsp:param name="origin" value="home" />
+	</jsp:include>
 
 	<div class="container">
 		<div class="row">

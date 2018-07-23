@@ -21,8 +21,9 @@
 </head>
 <body>
 
-
-	<jsp:include page="/WEB-INF/jsps/banner.jsp?origin=main" />
+	<jsp:include page="/WEB-INF/jsps/banner.jsp" />
+		<jsp:param name="origin" value="main" />
+	</jsp:include>
 
 	<div class="container" ng-app="app">
 		<h1>Customer Management</h1>
