@@ -35,7 +35,7 @@
 					<img src="<%=request.getContextPath()%>/images/Unicorn.svg" alt=""
 						width="100">
 					<h2>brilliant</h2>
-					<p>Diese Webapp ist brilliant.</p>
+					<p>Diese Webapp ist brilliant!</p>
 				</div>
 
 			</div>
@@ -44,7 +44,7 @@
 					<img src="<%=request.getContextPath()%>/images/Werewolf.svg" alt=""
 						width="100">
 					<h2>unique</h2>
-					<p>Diese Webapp ist einzigartig.</p>
+					<p>Diese Webapp ist einzigartig!</p>
 				</div>
 
 			</div>
@@ -53,7 +53,7 @@
 					<img src="<%=request.getContextPath()%>/images/Orc.svg" alt=""
 						width="100">
 					<h2>overwhelming</h2>
-					<p>Diese Webapp ist überwältigend.</p>
+					<p>Diese Webapp ist überwältigend!</p>
 				</div>
 
 			</div>
