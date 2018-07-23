@@ -1,14 +1,14 @@
 var app = angular.module('app', []);
 
-app.controller('clearallController', function($scope, $http, $location, $window) {
+app.controller('clearallController', ['$scope', '$http', '$location', '$window', function($scope, $http, $location, $window) {
 
 	$scope.clearAll = function() {
 		$window.location.reload();
 	}
 
-});
+}]);
 
-app.controller('postController', function($scope, $http, $location) {
+app.controller('postController', ['$scope', '$http', '$location', function($scope, $http, $location) {
 	
 	$scope.submitForm = function() {
 		
@@ -35,9 +35,9 @@ app.controller('postController', function($scope, $http, $location) {
 		$scope.firstname = "";
 		$scope.lastname = "";
 	}
-});
+}]);
 
-app.controller('getallcustomersController', function($scope, $http, $location) {
+app.controller('getallcustomersController', ['$scope', '$http', '$location', function($scope, $http, $location) {
 
 	$scope.showAllCustomers = false;
 
@@ -68,10 +68,10 @@ app.controller('getallcustomersController', function($scope, $http, $location) {
 	}
 
 	
-});
+}]);
 
 
-app.controller('getcustomerController', function($scope, $http, $location) {
+app.controller('getcustomerController', ['$scope', '$http', '$location', function($scope, $http, $location) {
 
 	$scope.showCustomer = false;
 
@@ -99,9 +99,9 @@ app.controller('getcustomerController', function($scope, $http, $location) {
 		});
 
 	}
-});
+}]);
 
-app.controller('getcustomersbylastnameController', function($scope, $http, $location) {
+app.controller('getcustomersbylastnameController', ['$scope', '$http', '$location', function($scope, $http, $location) {
 
 	$scope.showCustomersByLastName = false;
 	
@@ -133,5 +133,5 @@ app.controller('getcustomersbylastnameController', function($scope, $http, $loca
 		});
 
 	}
-});
+}]);
 
