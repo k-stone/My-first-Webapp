@@ -27,7 +27,7 @@
 				werden</p>
 
 			<c:choose>
-				<c:when test="<%= request.getParameter("origin") %> == 'home'">
+				<c:when test="${param.origin == 'home'}">
 					<a class="btn btn-primary btn-lg href=" href="main">Go</a>
 				</c:when>
 				<c:otherwise>

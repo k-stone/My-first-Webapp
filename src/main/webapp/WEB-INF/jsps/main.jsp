@@ -21,7 +21,7 @@
 </head>
 <body>
 
-	<jsp:include page="/WEB-INF/jsps/banner.jsp" />
+	<jsp:include page="/WEB-INF/jsps/banner.jsp" >
 		<jsp:param name="origin" value="main" />
 	</jsp:include>
 
