@@ -41,5 +41,6 @@ html, body {
 	background-size: cover;
 	height: 10vh;
 	padding: 20px 0;
+	font-family: "Abel", sans-serif;
 	color: rgba(255, 255, 255, 0.7);
 }
